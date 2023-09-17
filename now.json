@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "/src/main/java/com/your/backend",
+      "use": "@now/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/backend/(.*)",
+      "dest": "/src/main/java/com/your/backend/$1"
+    }
+  ],
+  "env": {
+    "SPRING_DATASOURCE_URL": "jdbc:mysql://localhost:3306/weather-service",
+    "SPRING_DATASOURCE_USERNAME": "root",
+    "SPRING_DATASOURCE_PASSWORD": "root",
+    "SPRING_DATASOURCE_DRIVER_CLASS_NAME": "com.mysql.cj.jdbc.Driver",
+    "SPRING_JPA_HIBERNATE_DDL_AUTO": "create",
+    "SPRING_MVC_PATHMATCH_MATCHING_STRATEGY": "ANT_PATH_MATCHER",
+    "SERVER_PORT": "8080",
+    "SECRET_KEY": "forecast"
+  }
+}
